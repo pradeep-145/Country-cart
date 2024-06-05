@@ -10,7 +10,7 @@ const path = require('path');
 app.use(express.json())
 app.use(cors())
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Country_Cart")
+  .connect("mongodb+srv://pradeepsakthis22cse:sps2004@cluster0.vkfvvjw.mongodb.net/Country-Cart?retryWrites=true&w=majority&appName=Cluster0")
 app.post('/register',(req,res)=>{
   BuyerModel.create(req.body).then(result => res.json(result))
   .catch(err => res.json(err))
