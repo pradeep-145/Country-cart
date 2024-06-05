@@ -1,0 +1,103 @@
+* {
+    scroll-behavior: smooth;
+}
+.container1 {
+    width : 100%;
+    border-radius : 5px;
+    background-color: rgb(40, 40, 40);
+    color:white;
+    padding : 20px 10px;
+    margin-top:10px;
+    display:inline-block;
+    align-items: center;
+}
+
+.container1 .icon {
+    font-size: 30px;
+    justify-content: center;
+    margin:0 10px;
+    align-items: center;
+    text-align : center;
+    float:right;
+}
+.logo{
+    text-align: center;
+
+}
+.logoicon {
+    width: 250px;
+    height:250px;
+}
+
+.para1, .para3 {
+    padding: 10px 10px 10px 10px;
+    margin: 20px 200px 20px 0px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(250, 207, 207, 0.2);
+    text-align: justify;
+    border : 0.5px solid grey;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.para2 , .para4 {
+    padding: 10px 10px 10px 10px;
+    margin: 20px 0px 20px 200px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    text-align: justify;
+    border : 0.5px solid grey;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.pc1 , .pc2 , .pc3 , .pc4 {
+    padding: 10px;
+    margin : 10px 0;
+    background-blend-mode:color-dodge;
+}
+
+.pc1:hover , .pc2:hover ,.pc3:hover ,.pc4:hover  {
+    border-style: ridge;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.para1:hover ,.para2:hover , .para3:hover , .para4:hover {
+    border : 2px solid black;
+    font-style: oblique;
+    padding: 15px 15px 15px 15px;
+    
+}
+#footer {
+    background-color: rgb(40, 40, 40);
+    color: white; 
+    padding: 20px;
+    height:200px;
+    border-radius: 5px;
+    margin:0;
+}
+
+#footer li {
+    display: inline-block;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+}
+a img :hover{
+    background-color: #ff6123;
+    border-radius: 5px;
+    transform: scale(1.2);
+    transition : background-color 0.3s , transform 0.3s;
+}

@@ -1,0 +1,196 @@
+/***    General     ***/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif
+}
+
+body {
+    margin: 0 auto;
+    justify-content: center; /* Center-align content horizontally */
+    align-items: center; /* Center-align content vertically */
+    height: 100vh;
+    
+}
+
+.m-5-auto {
+    margin: 5rem auto;
+}
+
+.primary-button {
+    margin-top: 5rem;
+    margin-right: 1rem;
+    padding: .6rem;
+    width: 10rem;
+    background: #222;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all .5s;
+    cursor: pointer;
+    text-transform: capitalize;
+
+}
+
+/***    Landing Page     ***/
+
+
+.logo{
+    text-align: center;
+    margin-bottom: 0;
+
+}
+.logoicon {
+    width: 400px;
+    height:400px;
+    display: block; /* Make the image a block-level element */
+    margin: 0 auto;
+}
+.buttons {
+    display: flex;
+    flex-direction: row; /* Stack buttons vertically */
+    align-items: center; /* Center-align buttons horizontally */
+    margin-top: auto;
+    margin-left:200px;
+    
+}
+
+#userspan, #farmerspan {
+    font-size:20px;
+    padding-bottom:50px;
+    text-align:center;
+}
+.main-para {
+    font-size: 2.5rem;
+    text-Transform: capitalize;
+    
+}
+.text-center {
+    width: 100%; /* Ensure full width */
+    text-align: center; /* Center-align text */
+}
+#login_btn span,
+#reg_btn span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    
+}
+
+.login {
+    display:inline-flex;
+}
+
+#reg_btn span:after,
+#login_btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#reg_btn:hover span,
+#login_btn:hover span {
+  padding-right: 25px;
+}
+
+#reg_btn:hover span:after,
+#login_btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/***    Login Page     ***/
+h2 {
+    font-weight: 300;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Arial', cursive;
+}
+
+form {
+    display: inline-block;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    max-width: 500px;
+    border-radius: 2px;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+}
+
+form label {
+    float: left;
+    font-size: .9rem;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.right-label {
+    float: right;
+    cursor: pointer;
+}
+
+input {
+    width: 27rem;
+    padding: .3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: .5rem 0;
+    margin-bottom: 1rem;
+}
+
+#sub_btn {
+    display: block;
+    width: 100%;
+    padding: .3rem;
+    border: none;
+    background: #222;
+    color: #fff;
+    border-radius: 3px;
+}
+
+#sub_btn:hover {
+    background: #333;
+    transition: all .5s
+}
+
+footer {
+    margin-top: 2rem; /* Add margin to footer for spacing */
+    text-align: center; /* Center-align footer text */
+}
+footer p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+/***    Register Page     ***/
+h5 {
+    font-weight: 200;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Arial', cursive;
+}
+#checkbox {
+    width: 1rem;
+}
+
+form span {
+    font-size: .8rem;
+}
+
+#reset_pass_lbl {
+    float: left;
+}
+
+/***    Home Page     ***/
+.home-page-title {
+    color: #222;
+}
