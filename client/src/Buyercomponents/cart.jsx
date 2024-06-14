@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Style/cart.css';
 import Navigation from './Navigation';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-function Cart({ data = [] }) {
-    const [items, setItems] = useState(data);
-
-    const handleQuantityChange = (index, action) => {
-        const updatedItems = [...items];
-        if (action === 'increment') {
-            updatedItems[index].quantity += 1;
-        } else if (action === 'decrement' && updatedItems[index].quantity > 1) {
-            updatedItems[index].quantity -= 1;
-        }
-        setItems(updatedItems);
-    };
+function Cart() {
+    const [items, setItems] = useState();
+    const [count,setCount]=useState(1);
+    const [price,setPrice]=useState();
+    useEffect(()=>{
+        axios.post("http://localhost:3000/cart").then(result=>setItems(result.data)).catch(err=>console.log(err))
+    })
 
     const calculateTotal = (item) => {
         return item.price * item.quantity;
@@ -26,36 +22,32 @@ function Cart({ data = [] }) {
                 <Navigation />
             </div>
             <div className="cart-container">
-                <table className="cart-table">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Array.isArray(items) && items.length > 0 ? (
-                            items.map((item, index) => (
-                                <tr key={index}>
-                                    <td>{item.name}</td>
-                                    <td>${item.price.toFixed(2)}</td>
-                                    <td>
-                                        <button onClick={() => handleQuantityChange(index, 'decrement')}>-</button>
-                                        {item.quantity}
-                                        <button onClick={() => handleQuantityChange(index, 'increment')}>+</button>
-                                    </td>
-                                    <td>${calculateTotal(item).toFixed(2)}</td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan="4">No items in cart</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
+                {items.map(item=>{
+                    return(
+                        <>
+                            <div  key={item.name}className="product">
+                <img
+                    src={item.productImage}
+                    
+                    alt="Product"
+                    className="product-image"
+                    id="img"
+                    />
+  
+                 
+
+                        <h4 id="name">{item.name}</h4><br />
+                        <h4 id="price">Price:{price}</h4><br />
+                        <h4 id="count">Total Items:{count}</h4>
+                        <button onClick={e=>{
+                            setCount(count+1)
+                            setPrice(price)
+                        }}>Add</button>
+                </div>
+    
+                        </>
+                    )
+                })}
             </div>
         </>
     );

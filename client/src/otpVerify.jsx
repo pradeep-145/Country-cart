@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import './otp.css'
 import { useNavigate } from 'react-router-dom'
 const otpVerify = () => {
     const navigate = useNavigate()
@@ -18,10 +19,14 @@ const otpVerify = () => {
     }
     const [otp,setOtp]=useState()
   return (
-    <div>
+    <div className='text-center m-5-auto'>
+        <form >
+
         <h1>Country Cart</h1><br />
-        <input type="text" name='otp'onChange={e=>setOtp(e.target.value)}/>
+        <p>You're trying to login to Country Cart , Please Enter the otp sent to your mail...</p>
+        <input type="number" name='otp'  maxLength='6'onChange={e=>setOtp(e.target.value)} placeholder='Enter Otp'/> <br />
         <button type='submit' onClick={handleSubmit}>SUBMIT</button>
+        </form>
     </div>
   )
 }

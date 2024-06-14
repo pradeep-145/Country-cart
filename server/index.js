@@ -22,16 +22,16 @@ app.get('/content',(req,res)=>{
   .then(result=> res.json(result))
   .catch(err => res.json(err))
 })
-const otp=otpGenerator.generate(6,{upperCaseAlphabets:false,lowerCaseAlphabets:false,specialChars:false})
 app.post('/login',(req,res)=>{
+  const otp=otpGenerator.generate(6,{upperCaseAlphabets:false,lowerCaseAlphabets:false,specialChars:false})
   const {email,password}=req.body;
-
+  
   BuyerModel.findOne({email:email}).then(
     user=>{
       if(user){
         if(user.password==password)
-        {
-          var transporter = nodemailer.createTransport({
+          {
+            var transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             port: 465,
             secure: true,
@@ -73,6 +73,7 @@ app.post('/fregister',(req,res)=>{
 
 app.post('/flogin',(req,res)=>{
   const {email,password}=req.body;
+  const otp=otpGenerator.generate(6,{upperCaseAlphabets:false,lowerCaseAlphabets:false,specialChars:false})
   VendorModel.findOne({email:email}).then(
     user=>{
       if(user){
@@ -114,7 +115,8 @@ app.post('/flogin',(req,res)=>{
   )
 })
 app.post("/cart",(req,res)=>{
-    ProductModel.find({_id:req.body.id}).then(result=>res.json(result))
+  const id=req.body;
+    ProductModel.findById(id).then(result=>res.json(result))
     .catch(err=>res.json(err))
 })
 app.post('/farmers', async(req,res)=>{

@@ -14,7 +14,7 @@ export default function SignInPage() {
             if(result.data=="success"){
 
                 axios.post('http://localhost:3000/otpverification',{email})
-            navigate('/otpverification');
+                navigate(`/otpverification `);
             }      
             else 
             alert("incorrect email or password");

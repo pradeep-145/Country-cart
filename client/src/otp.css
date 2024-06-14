@@ -1,0 +1,26 @@
+.body{
+    text-align: center;
+}
+form {
+    display: inline-block;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 27rem;
+    padding: .3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin: .5rem 0;
+    margin-bottom: 1rem;
+}
