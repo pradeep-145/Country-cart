@@ -26,7 +26,7 @@ const Content=()=> {
               
             <div  key={item._id}className="product">
                 <img
-                    src='https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/04/ash-gourd-1296x728-header.jpg?w=1155&h=1528'
+                    src={item.productImage}
                     
                     alt="Product"
                     className="product-image"
@@ -37,7 +37,7 @@ const Content=()=> {
 
                         <h4 id="name">{item.name}</h4>
                         
-                        <p id="price">{item.productPrice}</p>
+                        <h5 id="price">{item.productPrice}</h5>
                         <button onClick={handleCart(item._id)}>Add To Cart</button>
                     </div>  
                 </div>

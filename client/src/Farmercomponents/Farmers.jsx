@@ -66,8 +66,8 @@ const Farmers = () => {
   <br></br>
     
     <p className="attribute">Description : </p><input className="ip" placeholder="Enter the Description"onChange={(e)=>setDesc(e.target.value)}/>
-    <p className="attribute">Price :</p><input type="text" className="ip" placeholder ="Enter the Price " id="pr"onChange={(e)=>setPrice(e.target.value)} required></input>
-    <p className="attribute">Quantity :</p><input type="text" className="ip" placeholder ="Enter the Quantity " id="qty"onChange={(e)=>setQuantity(e.target.value)} required></input>
+    <p className="attribute">Price :</p><input type="number" className="ip" placeholder ="Enter the Price " id="pr"onChange={(e)=>setPrice(e.target.value)} required></input>
+    <p className="attribute">Quantity :</p><input type="number" className="ip" placeholder ="Enter the Quantity " id="qty"onChange={(e)=>setQuantity(e.target.value)} required></input>
     <p className="attribute">Location : </p><input type="text" className="ip" id="loc" onChange={(e)=>setLocation(e.target.value)}></input><br></br>
     <p className="attribute2"></p><button className="attribute2" type="submit">Post</button>
     <h4><Link to='/'>Logout</Link></h4>

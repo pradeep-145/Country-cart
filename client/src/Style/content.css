@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   height: 100vh;
   gap: 20px;
-  padding: 90px;
+  margin: 5px;
 }
 
 .product {
@@ -21,6 +21,7 @@
 .product-image {
   width: 200px; 
   height:200px;
+  border-radius: 5px;
 }
 
 

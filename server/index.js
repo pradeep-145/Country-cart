@@ -2,13 +2,11 @@ const express = require('express');
 require('dotenv').config()
 const app = express();
 const cors=require('cors');
-const multer = require('multer')
 const mongoose = require('mongoose');
 const BuyerModel=require('./models/BuyerModel')
 const VendorModel=require('./models/VendorModel')
 const ProductModel=require('./models/ProductModel');
 const otpGenerator=require('otp-generator')
-const path = require('path');
 app.use(express.json())
 app.use(cors())
 const nodemailer=require('nodemailer')
@@ -119,11 +117,22 @@ app.post("/cart",(req,res)=>{
     ProductModel.find({_id:req.body.id}).then(result=>res.json(result))
     .catch(err=>res.json(err))
 })
-app.post('/farmers',(req,res)=>{
+app.post('/farmers', async(req,res)=>{
+  const {Location,name,produtDesc,produtPrice,produtQuantity,productImage}=req.body;
   console.log(req.body)
-  ProductModel.create(req.body)
+  const existing = await ProductModel.findOne({name})
+
+  if(existing){
+    (existing.produtQuantity)+=Number(produtQuantity);
+    const Update=existing.save();
+    res.json(Update)
+  }
+  else{
+
+    ProductModel.create(req.body)
   .then(result=>res.json(result))
-  .catch(err=>console.log(err))
+.catch(err=>console.log(err))
+}
 })
 app.post('/otpverification',(req,res)=>{
   if(req.body.otp==otp){
