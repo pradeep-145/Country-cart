@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   height: 100vh;
   gap: 20px;
+  padding: 90px;
 }
 
 .product {

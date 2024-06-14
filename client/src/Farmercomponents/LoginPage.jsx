@@ -11,8 +11,13 @@ export default function SignInPage() {
             e.preventDefault(); 
             axios.post('http://localhost:3000/flogin',{email,password}).then(result=>{
             console.log(result)
-            if(result.data=="success")
-            navigate('/farmers');
+            if(result.data=="success"){
+
+                axios.post('http://localhost:3000/otpverification',{email})
+            navigate('/otpverification');
+            }      
+            else 
+            alert("incorrect email or password");
         
         })
             .catch(err=>console.log(err))

@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 function Cart({ data = [] }) {
     const [items, setItems] = useState(data);
 
-    // Function to handle quantity change
     const handleQuantityChange = (index, action) => {
         const updatedItems = [...items];
         if (action === 'increment') {
@@ -17,7 +16,6 @@ function Cart({ data = [] }) {
         setItems(updatedItems);
     };
 
-    // Function to calculate total price for an item
     const calculateTotal = (item) => {
         return item.price * item.quantity;
     };

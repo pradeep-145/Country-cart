@@ -11,9 +11,9 @@ import ForgotPass from './Buyercomponents/ForgetPasswordPage'
 import Farmers from './Farmercomponents/Farmers'
 import FarmerLogin from './Farmercomponents/LoginPage'
 import FarmerRegister from './Farmercomponents/RegisterPage'
-
+import Otpverification from './otpVerify'
 function App() {
-  const [count, setCount] = useState(0)
+
   return (
     <>
 
@@ -30,6 +30,7 @@ function App() {
         <Route path="/farmers" element={<Farmers />} />
         <Route path="/flogin" element={<FarmerLogin />} />
         <Route path="/fregister" element={<FarmerRegister />} />
+        <Route path='/otpverification' element={<Otpverification/>} />
       </Routes>
       </BrowserRouter>
       
