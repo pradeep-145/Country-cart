@@ -3,7 +3,7 @@ import {BrowserRouter , Routes, Route} from 'react-router-dom'
 import Content from './Buyercomponents/content'
 import Home from './Buyercomponents/HomePage'
 import './Style/App.css'
-import Cart from './Buyercomponents/cart'
+
 import Landing from './Buyercomponents/LandingPage'
 import Login from './Buyercomponents/LoginPage'
 import Register from './Buyercomponents/RegisterPage'
@@ -25,8 +25,7 @@ function App() {
         <Route path='/register' element={<Register />}></Route>      
         <Route path='/forgot' element={<ForgotPass />}></Route>      
         <Route path='/content' element={<Content />}></Route>
-        <Route path='/cart' element={<Cart />}></Route>
-        <Route path="/cart/:data" component={<Cart />} />
+        
         <Route path="/farmers" element={<Farmers />} />
         <Route path="/flogin" element={<FarmerLogin />} />
         <Route path="/fregister" element={<FarmerRegister />} />

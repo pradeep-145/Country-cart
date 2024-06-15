@@ -17,13 +17,7 @@ function Navigation(){
                 </img>
                     </a>
             </li>
-            <li>
-                <a href="/cart">
-                <img src="/trolley.png">
-
-                </img>
-                    </a>
-            </li>
+            
             <li>
                 <a href="#footer">Contact Us</a>
             </li>

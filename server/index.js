@@ -114,11 +114,7 @@ app.post('/flogin',(req,res)=>{
     }
   )
 })
-app.post("/cart",(req,res)=>{
-  const id=req.body;
-    ProductModel.findById(id).then(result=>res.json(result))
-    .catch(err=>res.json(err))
-})
+
 app.post('/farmers', async(req,res)=>{
   const {Location,name,produtDesc,produtPrice,produtQuantity,productImage}=req.body;
   console.log(req.body)

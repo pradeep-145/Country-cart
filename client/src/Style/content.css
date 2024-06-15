@@ -42,6 +42,21 @@
 .product:hover .description-box {
   opacity: 1; 
 }
+button {
+ /* Stack buttons vertically */ /* Center-align buttons horizontally */
+  margin: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: block;
+    width: 95%;
+    padding: .2rem;
+    border: none;
+    background: #222;
+    color: #fff;
+    border-radius: 3px;
+  
+  
+  
+}
 
 
 h4{
