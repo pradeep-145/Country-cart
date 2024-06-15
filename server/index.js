@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(cors())
 const nodemailer=require('nodemailer')
 
+const otp=otpGenerator.generate(6,{upperCaseAlphabets:false,lowerCaseAlphabets:false,specialChars:false})
 mongoose.connect(process.env.MONGO_URL).then(()=>console.log("DB connected Successfully"))
   .catch(err=>console.log(err))
 app.post('/register',(req,res)=>{
@@ -23,7 +24,7 @@ app.get('/content',(req,res)=>{
   .catch(err => res.json(err))
 })
 app.post('/login',(req,res)=>{
-  const otp=otpGenerator.generate(6,{upperCaseAlphabets:false,lowerCaseAlphabets:false,specialChars:false})
+
   const {email,password}=req.body;
   
   BuyerModel.findOne({email:email}).then(
@@ -73,7 +74,6 @@ app.post('/fregister',(req,res)=>{
 
 app.post('/flogin',(req,res)=>{
   const {email,password}=req.body;
-  const otp=otpGenerator.generate(6,{upperCaseAlphabets:false,lowerCaseAlphabets:false,specialChars:false})
   VendorModel.findOne({email:email}).then(
     user=>{
       if(user){
