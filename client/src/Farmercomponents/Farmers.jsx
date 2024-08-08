@@ -14,7 +14,7 @@ const Farmers = () => {
         e.preventDefault(); 
         
         
-        axios.post('http://localhost:3000/farmers',{Location,name,produtDesc,produtPrice,produtQuantity,productImage}).then(result=>{console.log(result)
+        axios.post('https://countrycart.onrender.com/farmers',{Location,name,produtDesc,produtPrice,produtQuantity,productImage}).then(result=>{console.log(result)
         alert("Product uploaded");
     })
         .catch(err=>console.log(err))

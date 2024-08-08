@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 const Content=()=> {
   const [products,setProducts]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:3000/content').then(result=>setProducts(result.data))
+    axios.get('https://countrycart.onrender.com/content').then(result=>setProducts(result.data))
     .catch(err=> console.log(err))
   })
   

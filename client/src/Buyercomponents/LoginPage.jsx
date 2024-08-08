@@ -9,11 +9,11 @@ export default function SignInPage() {
         const navigate=useNavigate();
         const handleSubmit=(e)=>{
             e.preventDefault(); 
-            axios.post('http://localhost:3000/login',{email,password}).then(result=>{
+            axios.post('https://countrycart.onrender.com/login',{email,password}).then(result=>{
             console.log(result)
             if(result.data=="success"){
 
-                axios.post('http://localhost:3000/otpverification',{email})
+                axios.post('https://countrycart.onrender.com/otpverification',{email})
             navigate('/otpverification');
             }        
             else
