@@ -23,6 +23,7 @@ app.get('/content',(req,res)=>{
   .then(result=> res.json(result))
   .catch(err => res.json(err))
 })
+
 app.post('/login',(req,res)=>{
 
   const {email,password}=req.body;
