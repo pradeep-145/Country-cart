@@ -25,7 +25,6 @@ function App() {
         <Route path='/register' element={<Register />}></Route>      
         <Route path='/forgot' element={<ForgotPass />}></Route>      
         <Route path='/content' element={<Content />}></Route>
-        
         <Route path="/farmers" element={<Farmers />} />
         <Route path="/flogin" element={<FarmerLogin />} />
         <Route path="/fregister" element={<FarmerRegister />} />
