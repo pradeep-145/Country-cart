@@ -6,7 +6,7 @@ const otpVerify = () => {
     const navigate = useNavigate()
     const handleSubmit =(e)=>{
         e.preventDefault()
-        axios.post("http://localhost:3000/otpverification",{otp}).then(result=>{
+        axios.post("https://country-cart.onrender.com/otpverification",{otp}).then(result=>{
             if(result.data=="success")
                 navigate('/home')
             else{

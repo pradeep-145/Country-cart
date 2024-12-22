@@ -10,7 +10,7 @@ export default function SignUpPage() {
         const navigate=useNavigate();
         const handleSubmit=(e)=>{
             e.preventDefault(); 
-            axios.post('https://countrycart.onrender.com/fregister',{name,email,password}).then(result=>{console.log(result)
+            axios.post('https://country-cart.onrender.com/fregister',{name,email,password}).then(result=>{console.log(result)
         navigate('/flogin')
         })
             .catch(err=>console.log(err))
